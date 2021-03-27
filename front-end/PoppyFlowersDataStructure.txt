@@ -1,0 +1,10 @@
+customer: {
+	id: <incremental int>
+	name*: Mary Fitzgerald
+	address: 
+	town*: Kilcolgan
+	eircode: H91 ABCD 
+	mobile: [ 08? 1231234 ]
+	landline: 091 123123
+	orderDates: [ <date1>, <date2>, ... ]
+}
