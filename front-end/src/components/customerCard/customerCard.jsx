@@ -4,7 +4,7 @@ const CustomerCard = (props) => {
     return (
         <div >
             <div className="customer-card" onClick={() => props.onClick(props.customer)}>
-                <span className="icon-top-right" onClick={() => props.handleDeleteClick(props.customer._id)}> x </span>
+                <span className="icon-top-right" onClick={(e) => props.handleDeleteClick(e, props.customer._id)}> x </span>
                 <label>
                     Name
                     <p className="customer-data">{props.customer.name}</p>

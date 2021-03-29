@@ -14,7 +14,6 @@ const Form = (props) => {
     const updateFormDetails = (e, formField) => {
         // copy formDetails entirely (...formDetails), then update formField in formDetails(state)
         setFormDetails({ ...formDetails, [formField]: e.currentTarget.value });
-        console.log(formDetails);
         if(!updatingCustomer)
             props.setQuery({ ...props.query, [formField]: e.currentTarget.value });
     }
@@ -76,7 +75,7 @@ const Form = (props) => {
     }
 
     useEffect(() => {
-        if((JSON.stringify({...CUSTOMER}) !== JSON.stringify({...props.customerToUpdate}) && !updatingCustomer) || formDetails._id !== props.customerToUpdate._id){
+        if((props.customerToUpdate._id !== "" && !updatingCustomer) || formDetails._id !== props.customerToUpdate._id){
             console.log("useState");
             setUpdatingCustomer(true);
             setFormDetails({...props.customerToUpdate});
@@ -90,6 +89,14 @@ const Form = (props) => {
             document.getElementById("response").style.color = "green"
     }
 
+    const renderTownListOption = (key) => {
+        return (
+            <option key={key} value={TOWNS[key].value}>
+                {TOWNS[key]}
+            </option>
+        )
+    }
+
     return (
         <div className="form-div">
             <form className="form">
@@ -99,11 +106,7 @@ const Form = (props) => {
                 <label>Town
                 <input list="towns" value={formDetails.town} onChange={(e) => updateFormDetails(e, "town")}></input>
                     <datalist value={formDetails.town} id="towns" name="towns">
-                        {Object.keys(TOWNS).map(key => (
-                            <option key={key} value={TOWNS[key].value}>
-                                {TOWNS[key]}
-                            </option>
-                        ))}
+                        {Object.keys(TOWNS).map(key => renderTownListOption(key))}
                     </datalist>
                 </label>
                 <label>Eircode

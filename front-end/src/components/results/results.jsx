@@ -29,7 +29,7 @@ const Results = (props) => {
         return requestBody;
     }
 
-    const handleDeleteClick = (customerId) => {
+    const handleDeleteClick = (e, customerId) => {
         fetch('http://localhost:9000/customers', deleteRequestBody(customerId))
             .then(res => res.text())
             .then(res => { 
@@ -38,6 +38,8 @@ const Results = (props) => {
             .catch(err => {
                 console.log(err);
             });
+
+        e.stopPropagation(); // Stop parent's onClick from firing
     }
 
     useEffect(() => {
