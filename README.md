@@ -2,7 +2,8 @@
 
 #### Prerequisites
 1. Install [Node](https://nodejs.org/en/download/) and [MongoDB](https://www.mongodb.com/try/download/community?tck=docs_server)(app runs on mongodb version 4.2(x64), but you can install any version, you'll just have to change the start-mongo script).
-2. Open TCP connection on ports 3000 and 9000 in your router settings. (Try [192.168.0.1](http://192.168.0.1) to access your router)
+2. Open TCP connection on ports 3000 and 9000 in your router settings. (Try [192.168.0.1](http://192.168.0.1) to access your router).
+3. When prompted to enter an ip address to open the ports on, make sure you use the right one. (ipconfig /all in cmd and scroll to the upper most IPv4 address)
 
 #### Running the app
 1. Change the ip address to your [public ip](https://www.whatismyip.com/) within results.jsx and form.jsx.
