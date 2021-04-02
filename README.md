@@ -10,5 +10,5 @@
 3. cd(change directory) to where you have the poppy-flowers repo saved.
 4. cd into front-end and type "npm install". Hit enter and wait for the packages to install.
 5. Type "cd ../back-end", hit enter and then type "npm install". Hit enter and wait for the packages to install.
-2. Run the app by double clicking the Run App.bat file within the poppy-flowers folder.
+2. Run the app by double clicking the run.bat file within the poppy-flowers folder.
 3. Now you, and everyone else should be able to connect to the application by going to your public ip address on port 3000 (http://<your-ip>:3000)

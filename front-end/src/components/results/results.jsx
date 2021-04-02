@@ -14,7 +14,7 @@ const Results = (props) => {
             .map(key => `${key}=${query[key]}`)
             .join("&");
         
-        return `http://localhost:9000/customers?${queryString}`;
+        return `http://46.7.108.110:9000/customers?${queryString}`;
     }
 
     const deleteRequestBody = (customerId) => {
@@ -30,7 +30,7 @@ const Results = (props) => {
     }
 
     const handleDeleteClick = (e, customerId) => {
-        fetch('http://localhost:9000/customers', deleteRequestBody(customerId))
+        fetch('http://46.7.108.110:9000/customers', deleteRequestBody(customerId))
             .then(res => res.text())
             .then(res => { 
                 console.log(res);
@@ -44,7 +44,7 @@ const Results = (props) => {
 
     useEffect(() => {
         if (JSON.stringify(props.query) === JSON.stringify(CUSTOMER)) {
-            fetch('http://localhost:9000/customers')
+            fetch('http://46.7.108.110:9000/customers')
                 .then(res => res.json())
                 .then(res => setResults(res))
                 .catch(err => {

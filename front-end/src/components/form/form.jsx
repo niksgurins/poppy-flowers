@@ -39,7 +39,7 @@ const Form = (props) => {
             errorResponse(true);
         } else {
             if(updatingCustomer) {
-                fetch('http://localhost:9000/customers', getRequestBody())
+                fetch('http://46.7.108.110:9000/customers', getRequestBody())
                     .then(res => res.text())
                     .then(res => { 
                         setResponse(res);
@@ -55,7 +55,7 @@ const Form = (props) => {
                         errorResponse(true);
                     });
             } else {
-                fetch('http://localhost:9000/customers', getRequestBody())
+                fetch('http://46.7.108.110:9000/customers', getRequestBody())
                     .then(res => res.text())
                     .then(res => { 
                         setResponse(res);
