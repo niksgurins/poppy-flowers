@@ -116,16 +116,21 @@ const buildSearchQuery = (query) => {
                     case "name":
                     case "address":
                     case "town":
-                    case "eircode":
                         queryPattern[key] = {
                             "$regex": query[key], 
+                            "$options": "i" 
+                        };
+                        break;
+                    case "eircode":
+                        queryPattern[key] = {
+                            "$regex": `^${query[key]}`, 
                             "$options": "i" 
                         };
                         break;
                     case "mobile":
                     case "landline":
                         queryPattern[key] = {
-                            "$regex": query[key]
+                            "$regex": `^${query[key]}`
                         };
                         break;
                     case "_id":

@@ -15,7 +15,7 @@ const Form = (props) => {
         // copy formDetails entirely (...formDetails), then update formField in formDetails(state)
         setFormDetails({ ...formDetails, [formField]: e.currentTarget.value });
         if(!updatingCustomer)
-            props.setQuery({ ...props.query, [formField]: e.currentTarget.value });
+            props.setQuery({ ...props.query, [formField]: e.currentTarget.value.trim() });
     }
 
     const getRequestBody = () => {
@@ -24,7 +24,6 @@ const Form = (props) => {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
                 ...formDetails
-                //orderedAt: new Date().getTime() / 1000
             })
         };
 
@@ -40,7 +39,6 @@ const Form = (props) => {
             errorResponse(true);
         } else {
             if(updatingCustomer) {
-                console.log("Submitting updatedCustomer")
                 fetch('http://localhost:9000/customers', getRequestBody())
                     .then(res => res.text())
                     .then(res => { 
@@ -57,7 +55,6 @@ const Form = (props) => {
                         errorResponse(true);
                     });
             } else {
-                console.log("Submitting newCustomer")
                 fetch('http://localhost:9000/customers', getRequestBody())
                     .then(res => res.text())
                     .then(res => { 
@@ -76,7 +73,6 @@ const Form = (props) => {
 
     useEffect(() => {
         if((props.customerToUpdate._id !== "" && !updatingCustomer) || formDetails._id !== props.customerToUpdate._id){
-            console.log("useState");
             setUpdatingCustomer(true);
             setFormDetails({...props.customerToUpdate});
             setButtonText("Update Customer");

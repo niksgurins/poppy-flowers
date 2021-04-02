@@ -13,7 +13,7 @@ const TOWNS = {
     BUNRATTY: "Bunratty",
     BALLYVAUGHAN: "Ballyvaughan",
     BOHEY: "Bohey",
-    CLARECASTE: "Clarecaste",
+    CLARECASTLE: "Clarecastle",
     COROFIN: "Corofin",
     CAHERPEAK: "Caherpeak",
     CLARINBRIDGE: "Clarinbridge",

@@ -13,7 +13,7 @@ const Results = (props) => {
         const queryString = Object.keys(query)
             .map(key => `${key}=${query[key]}`)
             .join("&");
-
+        
         return `http://localhost:9000/customers?${queryString}`;
     }
 
