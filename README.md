@@ -1,4 +1,4 @@
-### Getting the application to run on any machine and be open to the public
+## Getting the application to run on any machine and be open to the public
 
 #### Prerequisites
 1. Install [Node](https://nodejs.org/en/download/) and [MongoDB](https://www.mongodb.com/try/download/community?tck=docs_server)(app runs on mongodb version 4.2(x64), but you can install any version, you'll just have to change the start-mongo script).
