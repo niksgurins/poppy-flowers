@@ -78,6 +78,17 @@ app.delete('/customers', async function (req, res) {
         });
 })
 
+app.post('/users', async function (req, res) { // Log In
+    const query = { username: req.body.username, password: req.body.password };
+
+    let response;
+    await client.db('poppyFlowersDB').collection('users').findOne(query)
+        .then(result => result === null ? response = { status: 401, message: "Failure" } : response = { status: 200, message: "Success" })
+        .catch(err => response = { status: 401, message: "Failure" });
+
+    res.json(response);
+})
+
 const getLatestCustomers = async () => {
     let results = [];
 
