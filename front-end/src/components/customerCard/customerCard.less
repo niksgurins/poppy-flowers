@@ -1,15 +1,18 @@
 .customer-card {
-    display: grid;
     position: relative;
-    grid-template-columns: 33% 33% 33%;
-    grid-gap: 0px;
-    text-align: left;
     background-color: white;
     border: 1px solid rgba(0,0,0,.03);
     box-shadow: 1px 1px 15px 0 rgba(0,0,0,.1);
+    cursor: pointer;
+}
+
+.customer-card .customer-details {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-gap: 0px;
+    text-align: left;
     padding-left: 10px;
     padding-top: 5px;
-    cursor: pointer;
 }
 
 .icon-top-right {
@@ -29,14 +32,7 @@
 }
 
 .icon-top-right:hover {
-    display: block  !important;
-}
-
-.customer-card:hover {
-    background-color: rgba(0,0,0,.1);
-    .icon-top-right {
-        display: block !important;
-    }
+    display: block;
 }
 
 .customer-card label {
@@ -54,4 +50,50 @@
 
 .customer-data {
     font-weight: normal !important;
+}
+
+.confirmation-dialog { 
+    position: absolute;
+    display: none;
+    align-items: center;
+    background-color: rgba(0,0,0,0.7);
+    width: 100%;
+    height: 100%;
+    grid-column: 0 /span 4;
+    grid-row: 0 /span 2;
+    text-align: center;
+    top: 0;
+    left: 0;
+}
+
+.confirmation-dialog-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 5px;
+    width: 80%;
+    margin: auto;
+    padding: 10px 0;
+    background-color: #FFF;
+    align-items: center;
+    justify-content: center;
+}
+
+.confirmation-dialog-details p { 
+    margin: 0; 
+    font-size: 18px; 
+    grid-column: 1 /span 2; 
+    padding-bottom: 8px;
+}
+
+.confirmation-dialog-details button { 
+    font-size: 15px; 
+    padding: 5px;
+    margin: 0 15px;
+    background-color: #FFF;
+    border: 1px solid lightgray;
+}
+
+.confirmation-dialog-details button:hover {
+    background-color: lightgray;
+    cursor: pointer;
 }

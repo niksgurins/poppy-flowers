@@ -33,6 +33,7 @@ const TOWNS = {
     MAREE: "Maree",
     MONEYMORE: "Moneymore",
     MOYVILLA: "Moyvilla",
+    NEWQUAY: "New Quay",
     ORANBEG: "Oranbeg",
     ORANMORE: "Oranmore",
     PARKMORE: "Parkmore",
